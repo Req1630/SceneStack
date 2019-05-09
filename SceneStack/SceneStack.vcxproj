@@ -115,6 +115,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Console\Console.h" />
+    <ClInclude Include="Scene\GameScene\GameScene.h" />
+    <ClInclude Include="Scene\SceneBase\SceneBase.h" />
+    <ClInclude Include="Scene\SceneManager\SceneManager.h" />
+    <ClInclude Include="Scene\TItleScene\TitleScene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Console\Console.cpp" />
+    <ClCompile Include="Main\Main.cpp" />
+    <ClCompile Include="Scene\GameScene\GameScene.cpp" />
+    <ClCompile Include="Scene\SceneBase\SceneBase.cpp" />
+    <ClCompile Include="Scene\SceneManager\SceneManager.cpp" />
+    <ClCompile Include="Scene\TItleScene\TitleScene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
