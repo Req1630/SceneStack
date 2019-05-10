@@ -12,6 +12,7 @@ void clsTitleScene::Updata()
 	if( GetAsyncKeyState( VK_RETURN ) &0x01 ){
 		m_SceneManager.Change( new clsGameScene( m_SceneManager ) );
 		g_clsConsole.Clear( 10, 2, "　　　　" );
+
 	}
 }
 void clsTitleScene::Draw()

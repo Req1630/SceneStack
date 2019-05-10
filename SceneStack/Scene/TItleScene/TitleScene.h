@@ -3,6 +3,7 @@
 
 #include "..\SceneBase\SceneBase.h"
 #include "..\GameScene\GameScene.h"
+#include "..\PauseScene\PauseScene.h"
 
 class clsTitleScene : public clsSceneBase
 {

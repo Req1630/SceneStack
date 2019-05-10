@@ -13,15 +13,19 @@ class clsSceneBase;
 class clsSceneManager
 {
 public:
+	clsSceneManager();
+	~clsSceneManager();
+
 	void Update();
 	void Draw();
 
 	void Push( clsSceneBase* pScenebase );
-	void Change( clsSceneBase* pScenebase );
 	void Pop();
+	void Change( clsSceneBase* pScenebase );
+	
 
 private:
-	stack<shared_ptr<clsSceneBase>> m_pScene;
+	stack<shared_ptr<clsSceneBase>> m_pStackScene;
 };
 
 #endif // #ifndef SCENE_MANAGER_H.

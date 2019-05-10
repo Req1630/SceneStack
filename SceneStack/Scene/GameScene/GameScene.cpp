@@ -12,6 +12,9 @@ void clsGameScene::Updata()
 	if( GetAsyncKeyState( VK_RETURN ) &0x01 ){
 		m_SceneManager.Change( new clsTitleScene( m_SceneManager ) );
 	}
+	if( GetAsyncKeyState( VK_SHIFT ) & 0x01 ){
+		m_SceneManager.Push( new clsPauseScene( m_SceneManager ) );
+	}
 }
 
 void clsGameScene::Draw()

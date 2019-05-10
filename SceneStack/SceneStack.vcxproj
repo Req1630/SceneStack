@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClInclude Include="Console\Console.h" />
     <ClInclude Include="Scene\GameScene\GameScene.h" />
+    <ClInclude Include="Scene\PauseScene\PauseScene.h" />
     <ClInclude Include="Scene\SceneBase\SceneBase.h" />
     <ClInclude Include="Scene\SceneManager\SceneManager.h" />
     <ClInclude Include="Scene\TItleScene\TitleScene.h" />
@@ -125,6 +126,7 @@
     <ClCompile Include="Console\Console.cpp" />
     <ClCompile Include="Main\Main.cpp" />
     <ClCompile Include="Scene\GameScene\GameScene.cpp" />
+    <ClCompile Include="Scene\PauseScene\PauseScene.cpp" />
     <ClCompile Include="Scene\SceneBase\SceneBase.cpp" />
     <ClCompile Include="Scene\SceneManager\SceneManager.cpp" />
     <ClCompile Include="Scene\TItleScene\TitleScene.cpp" />

@@ -1,23 +1,30 @@
 #include "SceneManager.h"
 
+clsSceneManager::clsSceneManager()
+{
+}
+clsSceneManager::~clsSceneManager()
+{
+}
+
 void clsSceneManager::Update()
 {
-	m_pScene.top()->Updata();
+	m_pStackScene.top()->Updata();
 }
 void clsSceneManager::Draw()
 {
-	m_pScene.top()->Draw();
+	m_pStackScene.top()->Draw();
 }
 void clsSceneManager::Push( clsSceneBase* pScenebase )
 {
-	m_pScene.emplace( pScenebase );
+	m_pStackScene.emplace( pScenebase );
+}
+void clsSceneManager::Pop()
+{
+	m_pStackScene.pop();
 }
 void clsSceneManager::Change( clsSceneBase* pScenebase )
 {
 	clsSceneManager::Pop();
 	clsSceneManager::Push( pScenebase );
-}
-void clsSceneManager::Pop()
-{
-	m_pScene.pop();
 }
