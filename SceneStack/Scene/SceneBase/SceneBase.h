@@ -6,19 +6,17 @@
 
 class clsSceneManager;
 
-static clsConsole g_clsConsole;
-
 class clsSceneBase
 {
 public:
-	clsSceneBase( clsSceneManager& sceneManager );
+	clsSceneBase( shared_ptr<clsSceneManager> sceneManager );
 	virtual ~clsSceneBase(){};
 
 	virtual void Updata() = 0;
 	virtual void Draw() = 0;
 
 protected:
-	clsSceneManager& m_SceneManager;
+	shared_ptr<clsSceneManager> m_pSceneManager;
 };
 
 #endif // #ifndef SCENE_BASE_H.

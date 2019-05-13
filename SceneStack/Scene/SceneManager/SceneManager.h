@@ -19,9 +19,11 @@ public:
 	void Update();
 	void Draw();
 
-	void Push( clsSceneBase* pScenebase );
+	void Push( shared_ptr<clsSceneBase> pScenebase );
 	void Pop();
-	void Change( clsSceneBase* pScenebase );
+	void Change( shared_ptr<clsSceneBase> pScenebase );
+
+	void StackRelease();
 	
 
 private:

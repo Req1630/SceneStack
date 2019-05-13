@@ -14,7 +14,7 @@ clsConsole::clsConsole()
 }
 clsConsole::~clsConsole()
 {
-	if ( m_hConStdOut != INVALID_HANDLE_VALUE ){
+	if ( m_hConStdOut != nullptr ){
 		CloseHandle( m_hConStdOut );
 	}
 }

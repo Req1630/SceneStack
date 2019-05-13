@@ -1,24 +1,25 @@
 #include "PauseScene.h"
 
-clsPauseScene::clsPauseScene( clsSceneManager& sceneManager )
+clsPauseScene::clsPauseScene( shared_ptr<clsSceneManager> &sceneManager )
 	: clsSceneBase( sceneManager )
 {
 }
 clsPauseScene::~clsPauseScene()
-{}
+{
+	printf( "ポーズのデストラクタが呼ばれました。\n" );
+}
 
 void clsPauseScene::Updata()
 {
 	if( GetAsyncKeyState( VK_RETURN ) & 0x01 ){
-		m_SceneManager.Pop();
-		g_clsConsole.Clear( 10, 2, "　　　　" );
+		m_pSceneManager->Pop();
 	}
 }
 
 void clsPauseScene::Draw()
 {
-	g_clsConsole.SetColor(
-		static_cast<int>( clsConsole::enColor::L_RED ),
-		static_cast<int>( clsConsole::enColor::L_BLUE ) );
-	g_clsConsole.Draw( 10, 2, "ポーズ" );
+	if( i == 0 ){
+		printf( "ポーズ\n" );
+		i++;
+	}
 }

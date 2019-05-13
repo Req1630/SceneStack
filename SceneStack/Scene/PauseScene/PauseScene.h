@@ -7,11 +7,13 @@
 class clsPauseScene : public clsSceneBase
 {
 public:
-	clsPauseScene( clsSceneManager& sceneManager );
+	clsPauseScene( shared_ptr<clsSceneManager> &sceneManager );
 	~clsPauseScene();
 
 	void Updata() override;
 	void Draw() override;
+
+	int i = 0;
 };
 
 #endif // #ifndef PAUSE_SCENE.

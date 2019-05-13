@@ -7,11 +7,13 @@
 class clsGameScene : public clsSceneBase
 {
 public:
-	clsGameScene( clsSceneManager& sceneManager );
+	clsGameScene( shared_ptr<clsSceneManager> &sceneManager );
 	~clsGameScene();
 
 	void Updata() override;
 	void Draw() override;
+
+	int i = 0;
 };
 
 #endif // #ifndef GAME_SCENE_H.

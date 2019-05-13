@@ -15,16 +15,24 @@ void clsSceneManager::Draw()
 {
 	m_pStackScene.top()->Draw();
 }
-void clsSceneManager::Push( clsSceneBase* pScenebase )
+void clsSceneManager::Push( shared_ptr<clsSceneBase> pScenebase )
 {
-	m_pStackScene.emplace( pScenebase );
+	if( pScenebase == nullptr ){
+		return;
+	}
+	m_pStackScene.push( pScenebase );
 }
 void clsSceneManager::Pop()
 {
 	m_pStackScene.pop();
 }
-void clsSceneManager::Change( clsSceneBase* pScenebase )
+void clsSceneManager::Change( shared_ptr<clsSceneBase> pScenebase )
 {
 	clsSceneManager::Pop();
 	clsSceneManager::Push( pScenebase );
+}
+
+void clsSceneManager::StackRelease()
+{
+	clsSceneManager::Pop();
 }

@@ -1,26 +1,29 @@
 #include "GameScene.h"
 
-clsGameScene::clsGameScene( clsSceneManager& sceneManager )
+clsGameScene::clsGameScene( shared_ptr<clsSceneManager> &sceneManager )
 	: clsSceneBase ( sceneManager )
 {
 }
 clsGameScene::~clsGameScene()
-{}
+{
+	printf( "ゲームのデストラクタが呼ばれました。\n" );
+}
 
 void clsGameScene::Updata()
 {
 	if( GetAsyncKeyState( VK_RETURN ) &0x01 ){
-		m_SceneManager.Change( new clsTitleScene( m_SceneManager ) );
+		m_pSceneManager->Change( make_shared<clsTitleScene>( m_pSceneManager ) );
 	}
 	if( GetAsyncKeyState( VK_SHIFT ) & 0x01 ){
-		m_SceneManager.Push( new clsPauseScene( m_SceneManager ) );
+		m_pSceneManager->Push( make_shared<clsPauseScene>( m_pSceneManager ) );
 	}
 }
 
 void clsGameScene::Draw()
 {
-	g_clsConsole.SetColor( 
-		static_cast<int>(clsConsole::enColor::L_GREEN),
-		static_cast<int>(clsConsole::enColor::L_RED) );
-	g_clsConsole.Draw( 10, 2, "ゲーム" );
+	if( i == 0 ){
+		printf( "ゲーム\n" );
+		i++;
+	}
+
 }

@@ -1,24 +1,26 @@
 #include "TitleScene.h"
 
-clsTitleScene::clsTitleScene( clsSceneManager& sceneManager )
+clsTitleScene::clsTitleScene( shared_ptr<clsSceneManager> sceneManager )
 	: clsSceneBase ( sceneManager )
-{}
+{
+}
 
 clsTitleScene::~clsTitleScene()
-{}
+{
+	printf( "タイトルのデストラクタが呼ばれました\n" );
+}
 
 void clsTitleScene::Updata()
 {
 	if( GetAsyncKeyState( VK_RETURN ) &0x01 ){
-		m_SceneManager.Change( new clsGameScene( m_SceneManager ) );
-		g_clsConsole.Clear( 10, 2, "　　　　" );
+		m_pSceneManager->Change( make_shared<clsGameScene>( m_pSceneManager ) );
 
 	}
 }
 void clsTitleScene::Draw()
 {
-	g_clsConsole.SetColor( 
-		static_cast<int>(clsConsole::enColor::L_YELLOW),
-		static_cast<int>(clsConsole::enColor::L_BLUE) );
-	g_clsConsole.Draw( 10, 2, "タイトル" );
+	if( i == 0 ){
+		printf( "タイトル\n" );
+		i++;
+	}
 }

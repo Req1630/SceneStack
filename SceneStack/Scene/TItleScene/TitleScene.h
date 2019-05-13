@@ -8,11 +8,13 @@
 class clsTitleScene : public clsSceneBase
 {
 public:
-	clsTitleScene( clsSceneManager& sceneManager );
+	clsTitleScene( shared_ptr<clsSceneManager> sceneManager );
 	~clsTitleScene();
 
 	void Updata() override;
 	void Draw() override;
+
+	int i = 0;
 };
 
 #endif // #ifndef TITLE_SCENE_H.
